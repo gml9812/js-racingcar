@@ -1,0 +1,25 @@
+{
+  "name": "js-racingcar",
+  "version": "1.0.0",
+  "description": "자바스크립트로 구현한 자동차 경주 게임",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gml9812/js-racingcar.git"
+  },
+  "author": "heejun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gml9812/js-racingcar/issues"
+  },
+  "homepage": "https://github.com/gml9812/js-racingcar#readme",
+  "devDependencies": {
+    "cypress": "^9.1.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  }
+}
