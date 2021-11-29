@@ -11,7 +11,10 @@
         "sourceType": "module"
     },
     "rules": {
+        "import/prefer-default-export": "off",
+        "import/extensions" : "off",
         "max-depth": ["error", 2],
-        "linebreak-style": 0
+        "max-lines-per-function": ["error", 15],
+        "linebreak-style": "off"
     }
 }
