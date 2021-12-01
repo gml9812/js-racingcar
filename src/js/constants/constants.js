@@ -4,10 +4,10 @@ export const SELECTOR = {
   },
 
   CAR_NAME: {
-    CONTAINER: 'car-name-container',
-    DESCRIPTION: 'car-name-container__description',
-    INPUT: 'car-name-container__input',
-    BUTTON: 'car-name-container__button',
+    CONTAINER: '.car-name-container',
+    DESCRIPTION: '.car-name-container__description',
+    INPUT: '.car-name-container__input',
+    BUTTON: '.car-name-container__button',
   },
 
   GAME_COUNT: {},
