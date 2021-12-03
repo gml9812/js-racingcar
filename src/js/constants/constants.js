@@ -13,4 +13,10 @@ export const SELECTOR = {
   GAME_COUNT: {},
 };
 
-export const WARNING = {};
+export const WARNING = {
+  CAR_NAME: {
+    MIN_NUMBER: '두 개 이상의 자동차 이름을 입력하세요',
+    MAX_LENGTH: '자동차 이름은 최대 5글자까지 가능합니다',
+    DUPLICATION: '중복되는 자동차 이름이 있어요',
+  },
+};
