@@ -10,7 +10,9 @@ export const SELECTOR = {
     BUTTON: '.car-name-container__button',
   },
 
-  GAME_COUNT: {},
+  GAME_COUNT: {
+    CONTAINER: '.game-count-container',
+  },
 };
 
 export const WARNING = {
