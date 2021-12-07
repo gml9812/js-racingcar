@@ -1,5 +1,5 @@
-import { $ } from '../utils';
-import { SELECTOR } from '../constants';
+import { $ } from '../utils/index.js';
+import { SELECTOR } from '../constants/index.js';
 
 export default class RacingCarView {
   constructor() {
@@ -21,6 +21,9 @@ export default class RacingCarView {
   }
 
   renderGameCountInput() {
+    // this.disable(SELECTOR.CAR_NAME.INPUT);
+    // this.disable(SELECTOR.CAR_NAME.BUTTON);
+
     $(SELECTOR.GAME_COUNT.CONTAINER).innerHTML = `
       <p>시도할 횟수를 입력해주세요.</p>
       <div class="d-flex">
@@ -34,8 +37,16 @@ export default class RacingCarView {
     `;
   }
 
+  enable(target) {
+    $(target).disabled = false;
+  }
+
+  disable(target) {
+    $(target).disabled = true;
+  }
+
   reset() {
-    $(SELECTOR.CAR_NAME.INPUT).value = '';
+    this.renderCarNameInput();
     $(SELECTOR.GAME_COUNT.CONTAINER).innerHTML = '';
   }
 }

@@ -1,1 +1,1 @@
-export { RacingCarController } from './RacingCarController.js';
+export { default as RacingCarController } from './RacingCarController.js';

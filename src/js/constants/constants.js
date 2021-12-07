@@ -22,3 +22,12 @@ export const WARNING = {
     DUPLICATION: '중복되는 자동차 이름이 있어요',
   },
 };
+
+export const NUMBER = {
+  CAR_NAME: {
+    MIN_NUMBER: 2,
+    MAX_LENGTH: 5,
+  },
+
+  GAME_COUNT: {},
+};

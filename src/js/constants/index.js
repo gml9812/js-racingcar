@@ -1,1 +1,1 @@
-export { SELECTOR, WARNING } from './constants.js';
+export { SELECTOR, WARNING, NUMBER } from './constants.js';

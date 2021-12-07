@@ -1,14 +1,12 @@
-import { RacingCarModel, Car } from '../model';
-import { RacingCarView } from '../view';
-import { $, isValidCarNames } from '../utils';
-import { SELECTOR } from '../constants';
+import { RacingCarModel, Car } from '../model/index.js';
+import { RacingCarView } from '../view/index.js';
+import { $, isValidCarNames } from '../utils/index.js';
+import { SELECTOR } from '../constants/index.js';
 
 export default class RacingCarController {
   constructor() {
-    console.log('avv');
     this.model = new RacingCarModel();
     this.view = new RacingCarView();
-    this.view.renderGameCountInput();
     this.setEventListener();
   }
 
