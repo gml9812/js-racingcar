@@ -25,14 +25,14 @@ export default class RacingCarView {
     // this.disable(SELECTOR.CAR_NAME.BUTTON);
 
     $(SELECTOR.GAME_COUNT.CONTAINER).innerHTML = `
-      <p>시도할 횟수를 입력해주세요.</p>
+      <p class="game-count-container__description">시도할 횟수를 입력해주세요.</p>
       <div class="d-flex">
         <input
           type="number"
-          class="count-input w-100 mr-2"
+          class="game-count-container__input w-100 mr-2"
           placeholder="시도 횟수"
         />
-        <button type="button" class="count-btn btn btn-cyan">확인</button>
+        <button type="button" class="game-count-container__button btn btn-cyan">확인</button>
       </div>
     `;
   }

@@ -41,16 +41,20 @@ describe('Car name input test', () => {
   });
 
   it('Can check if car names overlap', () => {
-    testCorrectInput('NO,OVERLAP');
-    testIncorrectInput('OVERLAP,OVERLAP', WARNING.CAR_NAME.DUPLICATION);
+    testCorrectInput('NO,OVER,LAP');
+    testIncorrectInput('OVER,OVER', WARNING.CAR_NAME.DUPLICATION);
   });
 
   it('Can check number of cars', () => {
     testCorrectInput('MORE,THAN,TWO,CARS');
     testIncorrectInput('ONE', WARNING.CAR_NAME.MIN_NUMBER);
   });
-  /*
   it('Can check when correct car names are given', () => {
+    testCorrectInput('TEST,CORR,ECT');
+    cy.get(SELECTOR.GAME_COUNT.CONTAINER).should('exist');
+    cy.get(SELECTOR.GAME_COUNT.DESCRIPTION).should('exist');
+    cy.get(SELECTOR.GAME_COUNT.INPUT).should('exist');
+    cy.get(SELECTOR.GAME_COUNT.BUTTON).should('exist');
+    //차 이름 두 개 보이도록 refactor
   });
-  */
 });
