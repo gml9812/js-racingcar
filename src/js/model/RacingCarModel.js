@@ -5,9 +5,14 @@ export default class RacingCarModel {
 
   reset() {
     this.cars = [];
+    this.gameCount = 0;
   }
 
   setCars(cars) {
     this.cars = cars;
+  }
+
+  setGameCount(gameCount) {
+    this.gameCount = gameCount;
   }
 }

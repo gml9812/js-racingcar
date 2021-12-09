@@ -2,6 +2,7 @@
   "baseUrl" : "http://127.0.0.1:8080",
   "testFiles" : [
     "initial_rendering.spec.js",
-    "car_name_input.spec.js"
+    "car_name_input.spec.js",
+    "game_count_input.spec.js"
   ]
 }

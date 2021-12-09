@@ -45,17 +45,18 @@ describe('Game count input test', () => {
 
   it('Can check minimum game count', () => {
     testCorrectInput('4');
-    testIncorrectInput('0', WARNING.CAR_NAME.MIN_GAME_NUM);
-    testIncorrectInput('1', WARNING.CAR_NAME.MIN_GAME_NUM);
+    testIncorrectInput('0', WARNING.GAME_COUNT.COUNT_LIMIT);
+    testIncorrectInput('1', WARNING.GAME_COUNT.COUNT_LIMIT);
   });
 
   it('Can check maximum game count', () => {
     testCorrectInput('19');
-    testIncorrectInput('21', WARNING.CAR_NAME.MAX_GAME_NUM);
+    testIncorrectInput('21', WARNING.GAME_COUNT.COUNT_LIMIT);
   });
 
-  /*
   it('Can check when correct game count is given', () => {
+    testCorrectInput('6');
+    cy.get(SELECTOR.GAME_PROGRESS.CONTAINER).should('exist');
+    cy.get(SELECTOR.GAME_PROGRESS.CONTAINER).get(SELECTOR.GAME_PROGRESS.CAR);
   });
-  */
 });

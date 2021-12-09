@@ -1,2 +1,2 @@
 export { $ } from './querySelector.js';
-export { isValidCarNames } from './validator.js';
+export { isValidCarNames, isValidGameCount } from './validator.js';

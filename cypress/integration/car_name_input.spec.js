@@ -55,6 +55,5 @@ describe('Car name input test', () => {
     cy.get(SELECTOR.GAME_COUNT.DESCRIPTION).should('exist');
     cy.get(SELECTOR.GAME_COUNT.INPUT).should('exist');
     cy.get(SELECTOR.GAME_COUNT.BUTTON).should('exist');
-    //차 이름 두 개 보이도록 refactor
   });
 });

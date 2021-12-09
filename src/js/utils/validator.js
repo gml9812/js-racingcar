@@ -28,3 +28,32 @@ export const isValidCarNames = (carNames) => {
 
   return true;
 };
+
+const isNotNatural = (gameCount) => {
+  const pattern = /^(0|([1-9]\d*))$/;
+  return pattern.test(gameCount);
+};
+
+const isOverMaxCount = (gameCount) => {
+  return Number(gameCount) > NUMBER.GAME_COUNT.MAX_COUNT;
+};
+
+const isUnderMinCount = (gameCount) => {
+  return Number(gameCount) < NUMBER.GAME_COUNT.MIN_COUNT;
+};
+
+export const isValidGameCount = (gameCount) => {
+  if (isNotNatural(gameCount)) {
+    alert(WARNING.GAME_COUNT.NATURAL_NUMBER);
+    return false;
+  }
+  if (isOverMaxCount(gameCount)) {
+    alert(WARNING.GAME_COUNT.COUNT_LIMIT);
+    return false;
+  }
+  if (isUnderMinCount(gameCount)) {
+    alert(WARNING.GAME_COUNT.COUNT_LIMIT);
+    return false;
+  }
+  return true;
+};

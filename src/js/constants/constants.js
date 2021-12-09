@@ -16,6 +16,11 @@ export const SELECTOR = {
     INPUT: '.game-count-container__input',
     BUTTON: '.game-count-container__button',
   },
+
+  GAME_PROGRESS: {
+    CONTAINER: '.game-count-container',
+    CAR: '.player-car',
+  },
 };
 
 export const WARNING = {
@@ -27,6 +32,7 @@ export const WARNING = {
 
   GAME_COUNT: {
     NATURAL_NUMBER: '자연수만 입력 가능합니다',
+    COUNT_LIMIT: '2~20사이의 경기 수를 입력해 주세요!',
   },
 };
 
@@ -36,5 +42,8 @@ export const NUMBER = {
     MAX_LENGTH: 5,
   },
 
-  GAME_COUNT: {},
+  GAME_COUNT: {
+    MIN_COUNT: 2,
+    MAX_COUNT: 20,
+  },
 };
