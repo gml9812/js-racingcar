@@ -18,8 +18,15 @@ export const SELECTOR = {
   },
 
   GAME_PROGRESS: {
-    CONTAINER: '.game-count-container',
+    CONTAINER: '.game-progress-container',
     CAR: '.player-car',
+    WAIT_ANIMATION: '.spinner-container',
+  },
+
+  GAME_RESULT: {
+    CONTAINER: '.game-result-container',
+    WINNER: '.game-result-container__winner',
+    BUTTON: '.game-result-container__button',
   },
 };
 
