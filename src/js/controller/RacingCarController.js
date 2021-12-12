@@ -50,5 +50,13 @@ export default class RacingCarController {
     }
 
     this.model.setGameCount(gameCount);
+    this.startGame(gameCount);
+  }
+
+  // 
+  startGame(gameCount) {
+
+    this.view.render
+
   }
 }

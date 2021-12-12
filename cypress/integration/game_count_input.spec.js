@@ -38,19 +38,15 @@ describe('Game count input test', () => {
   });
 
   it('Game count should be natural number', () => {
-    testCorrectInput('5');
     testIncorrectInput('number', WARNING.GAME_COUNT.NATURAL_NUMBER);
     testIncorrectInput('1.2234', WARNING.GAME_COUNT.NATURAL_NUMBER);
   });
 
   it('Can check minimum game count', () => {
-    testCorrectInput('4');
-    testIncorrectInput('0', WARNING.GAME_COUNT.COUNT_LIMIT);
     testIncorrectInput('1', WARNING.GAME_COUNT.COUNT_LIMIT);
   });
 
   it('Can check maximum game count', () => {
-    testCorrectInput('19');
     testIncorrectInput('21', WARNING.GAME_COUNT.COUNT_LIMIT);
   });
 

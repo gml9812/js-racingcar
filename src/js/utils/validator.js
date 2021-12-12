@@ -31,7 +31,7 @@ export const isValidCarNames = (carNames) => {
 
 const isNotNatural = (gameCount) => {
   const pattern = /^(0|([1-9]\d*))$/;
-  return pattern.test(gameCount);
+  return !pattern.test(gameCount);
 };
 
 const isOverMaxCount = (gameCount) => {
