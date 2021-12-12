@@ -1,4 +1,4 @@
-import { SELECTOR, WARNING } from '../../src/js/constants/index.js';
+import { SELECTOR } from '../../src/js/constants/index.js';
 
 describe('Game progress and result test', () => {
   beforeEach(() => {

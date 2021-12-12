@@ -21,8 +21,8 @@ export default class RacingCarView {
   }
 
   renderGameCountInput() {
-    // this.disable(SELECTOR.CAR_NAME.INPUT);
-    // this.disable(SELECTOR.CAR_NAME.BUTTON);
+    this.disable(SELECTOR.CAR_NAME.INPUT);
+    this.disable(SELECTOR.CAR_NAME.BUTTON);
 
     $(SELECTOR.GAME_COUNT.CONTAINER).innerHTML = `
       <p class="game-count-container__description">시도할 횟수를 입력해주세요.</p>

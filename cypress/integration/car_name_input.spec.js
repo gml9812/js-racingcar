@@ -36,19 +36,17 @@ describe('Car name input test', () => {
   });
 
   it('Can check car name length', () => {
-    testCorrectInput('CORR,ECT,CAR,NAME');
     testIncorrectInput('INCORR,ECTCAR', WARNING.CAR_NAME.MAX_LENGTH);
   });
 
   it('Can check if car names overlap', () => {
-    testCorrectInput('NO,OVER,LAP');
     testIncorrectInput('OVER,OVER', WARNING.CAR_NAME.DUPLICATION);
   });
 
   it('Can check number of cars', () => {
-    testCorrectInput('MORE,THAN,TWO,CARS');
     testIncorrectInput('ONE', WARNING.CAR_NAME.MIN_NUMBER);
   });
+
   it('Can check when correct car names are given', () => {
     testCorrectInput('TEST,CORR,ECT');
     cy.get(SELECTOR.GAME_COUNT.CONTAINER).should('exist');
