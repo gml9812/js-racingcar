@@ -50,13 +50,27 @@ export default class RacingCarController {
     }
 
     this.model.setGameCount(gameCount);
-    this.startGame(gameCount);
+    this.startGames(gameCount);
   }
 
-  // 
-  startGame(gameCount) {
+  startGames(gameCount) {
+    for (let i = 0; i < gameCount; i += 1) {
+      this.runOneGame();
+    }
+    this.finishGames();
+  }
 
-    this.view.render
+  runOneGame() {
+    this.model.runOneGame();
+    this.view.renderGameProgress(this.model.getCars());
+  }
 
+  finishGames() {
+    setTimeout(() => {
+      this.model.finishGame();
+      this.view.renderGameProgress(this.model.getCars());
+      this.view.renderResult(this.model.getWinner());
+      console.log(this.model.getWinner());
+    }, 1000);
   }
 }

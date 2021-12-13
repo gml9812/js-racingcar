@@ -1,3 +1,6 @@
+import { getRandomNumber } from '../utils/index.js';
+import { NUMBER } from '../constants/index.js';
+
 export default class RacingCarModel {
   constructor() {
     this.reset();
@@ -12,7 +15,42 @@ export default class RacingCarModel {
     this.cars = cars;
   }
 
+  getCars() {
+    return this.cars;
+  }
+
   setGameCount(gameCount) {
     this.gameCount = gameCount;
+  }
+
+  getGameCount() {
+    return this.gameCount;
+  }
+
+  runOneGame() {
+    this.cars.forEach((car) => {
+      if (this.canMoveCarThisGame()) {
+        car.moveForWard();
+      }
+    });
+  }
+
+  canMoveCarThisGame() {
+    return getRandomNumber() > NUMBER.GAME_PROGRESS.THRESHOLD;
+  }
+
+  finishGame() {
+    this.cars.forEach((car) => car.finishLoading());
+  }
+
+  getWinner() {
+    const maxDist = this.getMaxDistance();
+    return this.cars.filter(({ position }) => {
+      return position === maxDist;
+    });
+  }
+
+  getMaxDistance() {
+    return Math.max(...this.cars.map(({ position }) => position));
   }
 }

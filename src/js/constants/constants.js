@@ -53,4 +53,10 @@ export const NUMBER = {
     MIN_COUNT: 2,
     MAX_COUNT: 20,
   },
+
+  GAME_PROGRESS: {
+    MAX_RANDOM_NUMBER: 10,
+    MIN_RANDOM_NUMBER: 0,
+    THRESHOLD: 4,
+  },
 };

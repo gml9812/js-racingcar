@@ -37,6 +37,59 @@ export default class RacingCarView {
     `;
   }
 
+  renderGameProgress(cars) {
+    this.disable(SELECTOR.GAME_COUNT.INPUT);
+    this.disable(SELECTOR.GAME_COUNT.BUTTON);
+
+    $(SELECTOR.GAME_PROGRESS.CONTAINER).innerHTML = `
+      <section class="mt-4">
+        <div class="d-flex">
+          ${cars.map((car) => this.progressTemplate(car))}
+        </div>
+      </section>
+    `;
+  }
+
+  progressTemplate(car) {
+    return `
+      <div>
+        <div class="car-player mr-2">${car.name}</div>
+        ${
+          car.isLoading
+            ? this.arrowTemplate().repeat(car.position - 1) + this.spinnerTemplate()
+            : this.arrowTemplate().repeat(car.position)
+        }
+      </div>
+    `;
+  }
+
+  arrowTemplate() {
+    return '<div class="forward-icon mt-2">⬇️️</div>';
+  }
+
+  spinnerTemplate() {
+    return `
+      <div class="d-flex justify-center mt-4">
+        <div class="relative spinner-container">
+          <span class="material spinner"></span>
+        </div>
+      </div>
+    `;
+  }
+
+  renderResult(winner) {
+    $(SELECTOR.GAME_RESULT.CONTAINER).innerHTML = `
+      <section>
+        <h2>🏆 최종 우승자: ${winner.map(({ name }) => name).join(', ')} 🏆</h2>
+        <div class="d-flex justify-center">
+          <button type="button" class="reset-btn btn btn-cyan">
+           다시 시작하기
+          </button>
+        </div>
+      </section>
+    `;
+  }
+
   enable(target) {
     $(target).disabled = false;
   }
