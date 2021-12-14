@@ -17,6 +17,9 @@ export default class RacingCarController {
     $(SELECTOR.GAME_COUNT.CONTAINER).addEventListener('click', (e) => {
       this.handleGameCountButtonClick(e.target);
     });
+    $(SELECTOR.GAME_RESULT.CONTAINER).addEventListener('click', (e) => {
+      this.handleGameResetButtonClick(e.target);
+    });
   }
 
   handleCarNameButtonClick(target) {
@@ -70,7 +73,15 @@ export default class RacingCarController {
       this.model.finishGame();
       this.view.renderGameProgress(this.model.getCars());
       this.view.renderResult(this.model.getWinner());
-      console.log(this.model.getWinner());
     }, 1000);
+  }
+
+  handleGameResetButtonClick(target) {
+    if (target !== $(SELECTOR.GAME_RESULT.BUTTON)) {
+      return;
+    }
+
+    this.model.reset();
+    this.view.reset();
   }
 }

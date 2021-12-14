@@ -82,7 +82,7 @@ export default class RacingCarView {
       <section>
         <h2>🏆 최종 우승자: ${winner.map(({ name }) => name).join(', ')} 🏆</h2>
         <div class="d-flex justify-center">
-          <button type="button" class="reset-btn btn btn-cyan">
+          <button type="button" class="game-result-container__button btn btn-cyan">
            다시 시작하기
           </button>
         </div>
@@ -101,5 +101,7 @@ export default class RacingCarView {
   reset() {
     this.renderCarNameInput();
     $(SELECTOR.GAME_COUNT.CONTAINER).innerHTML = '';
+    $(SELECTOR.GAME_PROGRESS.CONTAINER).innerHTML = '';
+    $(SELECTOR.GAME_RESULT.CONTAINER).innerHTML = '';
   }
 }
