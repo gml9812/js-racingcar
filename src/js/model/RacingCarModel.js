@@ -31,6 +31,7 @@ export default class RacingCarModel {
     this.cars.forEach((car) => {
       if (this.canMoveCarThisGame()) {
         car.moveForWard();
+        car.loading();
       }
     });
     this.setGameCount(this.getGameCount() - 1);

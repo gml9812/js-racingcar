@@ -43,7 +43,7 @@ export default class RacingCarView {
 
     $(SELECTOR.GAME_PROGRESS.CONTAINER).innerHTML = `
       <section class="mt-4">
-        <div class="d-flex">
+        <div class="d-flex justify-center">
           ${cars.map((car) => this.progressTemplate(car))}
         </div>
       </section>
@@ -56,7 +56,8 @@ export default class RacingCarView {
         <div class="car-player mr-2">${car.name}</div>
         ${
           car.isLoading
-            ? this.arrowTemplate().repeat(car.position - 1) + this.spinnerTemplate()
+            ? this.arrowTemplate().repeat(car.position - 1) +
+              this.spinnerTemplate()
             : this.arrowTemplate().repeat(car.position)
         }
       </div>
@@ -80,7 +81,9 @@ export default class RacingCarView {
   renderResult(winner) {
     $(SELECTOR.GAME_RESULT.CONTAINER).innerHTML = `
       <section>
-        <h2>🏆 최종 우승자: ${winner.map(({ name }) => name).join(', ')} 🏆</h2>
+        <h2 class="d-flex justify-center">🏆 최종 우승자: ${winner
+          .map(({ name }) => name)
+          .join(', ')} 🏆</h2>
         <div class="d-flex justify-center">
           <button type="button" class="game-result-container__button btn btn-cyan">
            다시 시작하기

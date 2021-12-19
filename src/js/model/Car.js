@@ -2,7 +2,7 @@ export default class Car {
   constructor(name) {
     this.name = name;
     this.position = 0;
-    this.isLoading = true;
+    this.isLoading = false;
   }
 
   moveForWard() {

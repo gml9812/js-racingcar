@@ -61,8 +61,7 @@ export default class RacingCarController {
     this.model.setGameCount(gameCount);
   }
 
-  async startGames() {
-    //gameCount가 남아 있다면 딜레이마다 runOneGame. 
+  async startGames() { 
     while (this.model.getGameCount() !== 0) {
       await this.runOneGame();
     }
