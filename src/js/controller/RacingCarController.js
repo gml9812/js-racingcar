@@ -1,6 +1,6 @@
 import { RacingCarModel, Car } from '../model/index.js';
 import { RacingCarView } from '../view/index.js';
-import { $, isValidCarNames, isValidGameCount } from '../utils/index.js';
+import { $, delay, isValidCarNames, isValidGameCount } from '../utils/index.js';
 import { SELECTOR } from '../constants/index.js';
 
 export default class RacingCarController {
@@ -46,6 +46,12 @@ export default class RacingCarController {
       return;
     }
 
+    this.getCountInput();
+
+    this.startGames();
+  }
+
+  getCountInput() {
     const gameCount = $(SELECTOR.GAME_COUNT.INPUT).value;
     if (!isValidGameCount(gameCount)) {
       $(SELECTOR.GAME_COUNT.INPUT).value = '';
@@ -53,19 +59,20 @@ export default class RacingCarController {
     }
 
     this.model.setGameCount(gameCount);
-    this.startGames(gameCount);
   }
 
-  startGames(gameCount) {
-    for (let i = 0; i < gameCount; i += 1) {
-      this.runOneGame();
+  async startGames() {
+    //gameCount가 남아 있다면 딜레이마다 runOneGame. 
+    while (this.model.getGameCount() !== 0) {
+      await this.runOneGame();
     }
     this.finishGames();
   }
 
-  runOneGame() {
+  async runOneGame() {
     this.model.runOneGame();
     this.view.renderGameProgress(this.model.getCars());
+    await delay(1000);
   }
 
   finishGames() {

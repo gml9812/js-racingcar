@@ -33,6 +33,7 @@ export default class RacingCarModel {
         car.moveForWard();
       }
     });
+    this.setGameCount(this.getGameCount() - 1);
   }
 
   canMoveCarThisGame() {

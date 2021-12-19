@@ -53,6 +53,6 @@ describe('Game count input test', () => {
   it('Can check when correct game count is given', () => {
     testCorrectInput('6');
     cy.get(SELECTOR.GAME_PROGRESS.CONTAINER).should('exist');
-    cy.get(SELECTOR.GAME_PROGRESS.CONTAINER).get(SELECTOR.GAME_PROGRESS.CAR);
+    cy.get(SELECTOR.GAME_PROGRESS.CAR);
   });
 });
